@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "concurrently -k -n COMPILER,NODEMON -c yellow,blue \"tsc -w\" \"nodemon -w dist -q dist/index.js\"\n"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^6.2.0",
     "nodemon": "^2.0.12",
     "typescript": "^4.3.5"
   }
